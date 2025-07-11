@@ -109,9 +109,19 @@
      <!-- PDF Project -->
 <div class="card">
   <h3>Industrialization and Urbanization</h3>
-  <p>Debate Competition. (Best House)</p>
+  <p>Advantage & Disadvantage</p>
   <a href="#" onclick="downloadWithPassword()">Download PDF</a>
 </div>
+
+   <!-- PDF Project -->
+<div class="card">
+  <h3>Industrialization and Urbanization</h3>
+  <p> Disadvantage Only</p>
+  <a href="#" onclick="downloadWithPasswords()">Download PDF</a>
+</div>
+
+
+
 
 
       <!-- Website Link -->
@@ -141,10 +151,27 @@
   function downloadWithPassword() {
     const password = prompt("Enter password to download the file:");
 
-    if (password === "orange army 123") {
+    if (password === "123") {
       const link = document.createElement("a");
       link.href = "Debate.pdf";
       link.download = "Debate.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (password !== null) {
+      alert("Incorrect password. Access denied!");
+    }
+  }
+</script>
+
+  <script>
+  function downloadWithPasswords() {
+    const password = prompt("Enter password to download the file:");
+
+    if (password === "123") {
+      const link = document.createElement("a");
+      link.href = "Debates.pdf";
+      link.download = "Debates.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
